@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
-import { UseStore } from 'zustand';
+import { useStore } from 'zustand';
 
 export function mountStoreDevtool<T extends object = Record<string | number | symbol, any>>(
   storeName: string,
-  store: UseStore<T>,
+  store: useStore<T>,
   rootElement?: HTMLElement
 ) {
-  type StoreState = ReturnType<UseStore<T>['getState']>;
+  type StoreState = ReturnType<useStore<T>['getState']>;
 
   const externalUpdates = {
     count: 0,
